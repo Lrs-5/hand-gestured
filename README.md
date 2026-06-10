@@ -1,16 +1,164 @@
-# React + Vite
+# ✨ Hand Gesture Emoji 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fun and interactive React application that uses **MediaPipe Hand Landmarker** and your webcam to detect hand gestures in real time and display corresponding emojis on the screen.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 📷 Real-time webcam feed
+- ✋ Hand gesture detection using MediaPipe
+- 😀 Automatic emoji generation
+- 🎨 Modern responsive UI
+- 📱 Mobile-friendly design
+- ⚡ Built with React + Vite
+- 🔥 Smooth emoji animations
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- React.js
+- Vite
+- MediaPipe Tasks Vision
+- React Webcam
+- CSS3
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📂 Project Structure
+
+```bash
+src/
+│
+├── componets/
+│   ├── Webcam.jsx
+│   └── HandDetector.jsx
+│
+├── utils/
+│   └── gestureRecognizer.js
+│
+├── App.jsx
+├── App.css
+└── main.jsx
+```
+
+---
+
+## 🎯 Supported Gestures
+
+| Gesture | Emoji |
+|----------|--------|
+| Open Palm | 🤚 |
+| Thumbs Up | 👍 |
+| Peace Sign | ✌️ |
+| Fist | ✊ |
+| OK Sign | 👌 |
+| Rock Sign | 🤘 |
+
+*(Can be extended with more custom gestures.)*
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone  https://github.com/Lrs-5/hand-gestured.git
+```
+
+Move into project directory:
+
+```bash
+cd hand-emoji-app
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## 📦 Required Packages
+
+```bash
+npm install react-webcam
+npm install @mediapipe/tasks-vision
+```
+
+---
+
+## 🎥 How It Works
+
+1. User starts the webcam.
+2. MediaPipe Hand Landmarker detects hand landmarks.
+3. Gesture recognition logic analyzes finger positions.
+4. Corresponding emoji is generated.
+5. Emoji appears live on the camera screen.
+
+---
+
+## 📸 Demo
+
+### Open Palm
+
+🤚
+
+### Thumbs Up
+
+👍
+
+### Peace Sign
+
+✌️
+
+### Fist
+
+✊
+
+### OK Sign
+
+👌
+
+---
+
+## 🔮 Future Improvements
+
+- Multiple hand detection
+- Emoji particle effects
+- Gesture history tracking
+- Screenshot capture
+- Emoji rain animation
+- AR filters
+- Custom gesture training
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome.
+
+Feel free to fork the project and submit a pull request.
+
+---
+
+## 👩‍💻 Author
+
+**Lipsarani Sahoo**
+
+Computer Science Engineering Student
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub.
+
+It helps others discover the project and motivates future improvements.
