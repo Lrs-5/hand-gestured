@@ -6,142 +6,176 @@
 }
 
 body {
-  background: linear-gradient(
-    135deg,
-    #667eea,
-    #764ba2
-  );
   min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .app {
+  width: 100%;
   min-height: 100vh;
+  padding: 20px;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 20px;
+  align-items: center;
+
+  text-align: center;
 }
 
 .title {
   color: white;
-  font-size: 3rem;
-  margin-bottom: 20px;
-  text-align: center;
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 18px;
 }
 
 .emoji-container {
-  margin: 20px 0;
+  margin-bottom: 18px;
 }
 
 .emoji {
-  font-size: 8rem;
-  animation: pop 0.3s ease;
+  font-size: 5rem;
+  animation: pop .3s ease;
 }
 
 @keyframes pop {
-  0% {
-    transform: scale(0.7);
+  from {
+    transform: scale(.7);
+    opacity: .5;
   }
 
-  100% {
+  to {
     transform: scale(1);
+    opacity: 1;
   }
 }
 
 .camera-card {
-  background: white;
-  padding: 25px;
-  border-radius: 25px;
-  box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+  width: min(92vw, 760px);
+
+  background: rgba(255,255,255,.15);
+  backdrop-filter: blur(14px);
+
+  border-radius: 22px;
+
+  padding: 22px;
+
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,.25);
+}
+
+.camera-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 .camera {
   width: 100%;
-  max-width: 700px;
-  border-radius: 20px;
+  max-width: 650px;
+
+  border-radius: 18px;
   overflow: hidden;
 }
 
+.floating-emoji {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  font-size: 55px;
+
+  animation: float 2s ease-in-out infinite;
+
+  filter: drop-shadow(0 0 10px rgba(255,255,255,.8));
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 .button {
-  margin: 20px 0;
-  padding: 14px 28px;
+  margin-top: 20px;
+
+  padding: 13px 34px;
+
   border: none;
   border-radius: 12px;
-  font-size: 18px;
-  cursor: pointer;
-  font-weight: bold;
+
   background: #4f46e5;
   color: white;
-  transition: 0.3s;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: .3s;
 }
 
 .button:hover {
-  transform: translateY(-3px);
   background: #4338ca;
+  transform: translateY(-2px);
 }
 
 .status {
-  margin-top: 15px;
-  color: #555;
-  font-weight: 600;
+  margin-top: 14px;
+  color: white;
+  font-size: 1rem;
 }
 
 .gesture-text {
+  margin-top: 8px;
   color: white;
-  font-size: 1.4rem;
-  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
+
+  body {
+    align-items: flex-start;
+  }
+
+  .app {
+    padding: 20px 15px;
+  }
+
   .title {
     font-size: 2rem;
   }
 
   .emoji {
-    font-size: 5rem;
+    font-size: 4rem;
+  }
+
+  .camera-card {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .camera {
+    max-width: 100%;
+  }
+
+  .floating-emoji {
+    font-size: 42px;
+    top: 10px;
+    right: 10px;
   }
 
   .button {
-    width: 90%;
-  }
-}
-.camera-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 700px;
-}
-
-.floating-emoji {
-  position: absolute;
-
-  top: 20px;
-  right: 20px;
-
-  font-size: 80px;
-
-  z-index: 10;
-
-  animation: floatEmoji 2s ease-in-out infinite;
-
-  filter:
-    drop-shadow(0 0 10px rgba(255,255,255,0.8))
-    drop-shadow(0 0 20px rgba(255,255,255,0.5));
-}
-
-@keyframes floatEmoji {
-  0% {
-    transform: translateY(0px) rotate(-5deg);
-  }
-
-  50% {
-    transform: translateY(-15px) rotate(5deg);
-  }
-
-  100% {
-    transform: translateY(0px) rotate(-5deg);
+    width: 100%;
   }
 }
