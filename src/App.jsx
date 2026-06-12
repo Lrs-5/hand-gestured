@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="app">
       <h1 className="title">
-        ✨ Hand Gesture Emoji App
+        ✨ Hand Gesture Emoji Generator✨
       </h1>
 
       <button
