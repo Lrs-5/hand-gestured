@@ -1,181 +1,596 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body{
+  font-family:"Inter",sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+
+  background:
+  radial-gradient(circle at top left,#4f46e5 0%,transparent 30%),
+  radial-gradient(circle at bottom right,#7c3aed 0%,transparent 35%),
+  linear-gradient(135deg,#030712,#0f172a,#111827);
+
+  color:#fff;
 }
 
-.app {
-  width: 100%;
-  min-height: 100vh;
-  padding: 20px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
+.app{
+  width:100%;
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  padding:40px 20px 60px;
 }
 
-.title {
-  color: white;
-  font-size: 2.7rem;
-  font-weight: 700;
-  margin-bottom: 18px;
+.bg{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:.35;
+  animation:blob 18s infinite ease-in-out;
+  pointer-events:none;
 }
 
-.emoji-container {
-  margin-bottom: 18px;
+.blob1{
+  width:350px;
+  height:350px;
+  background:#6366f1;
+  top:-100px;
+  left:-100px;
 }
 
-.emoji {
-  font-size: 5rem;
-  animation: pop .3s ease;
+.blob2{
+  width:300px;
+  height:300px;
+  background:#9333ea;
+  right:-100px;
+  top:150px;
+  animation-delay:5s;
 }
 
-@keyframes pop {
-  from {
-    transform: scale(.7);
-    opacity: .5;
+.blob3{
+  width:320px;
+  height:320px;
+  background:#06b6d4;
+  bottom:-120px;
+  left:35%;
+  animation-delay:9s;
+}
+
+@keyframes blob{
+
+  0%{
+    transform:translate(0,0) scale(1);
   }
 
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.camera-card {
-  width: min(92vw, 760px);
-
-  background: rgba(255,255,255,.15);
-  backdrop-filter: blur(14px);
-
-  border-radius: 22px;
-
-  padding: 22px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  box-shadow: 0 15px 40px rgba(0,0,0,.25);
-}
-
-.camera-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.camera {
-  width: 100%;
-  max-width: 650px;
-
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-.floating-emoji {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-
-  font-size: 55px;
-
-  animation: float 2s ease-in-out infinite;
-
-  filter: drop-shadow(0 0 10px rgba(255,255,255,.8));
-}
-
-@keyframes float {
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.button {
-  margin-top: 20px;
-
-  padding: 13px 34px;
-
-  border: none;
-  border-radius: 12px;
-
-  background: #4f46e5;
-  color: white;
-
-  font-size: 17px;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: .3s;
-}
-
-.button:hover {
-  background: #4338ca;
-  transform: translateY(-2px);
-}
-
-.status {
-  margin-top: 14px;
-  color: white;
-  font-size: 1rem;
-}
-
-.gesture-text {
-  margin-top: 8px;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-@media (max-width: 768px) {
-
-  body {
-    align-items: flex-start;
+  50%{
+    transform:translate(40px,-40px) scale(1.2);
   }
 
-  .app {
-    padding: 20px 15px;
+  100%{
+    transform:translate(0,0) scale(1);
   }
 
-  .title {
-    font-size: 2rem;
+}
+
+.hero{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
+
+.badge{
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:10px 18px;
+
+  border-radius:50px;
+
+  border:1px solid rgba(255,255,255,.15);
+
+  background:rgba(255,255,255,.08);
+
+  backdrop-filter:blur(18px);
+
+  font-size:14px;
+  font-weight:600;
+
+  color:#dbeafe;
+
+  margin-bottom:25px;
+
+}
+
+.title{
+
+  font-size:4rem;
+
+  line-height:1.1;
+
+  font-weight:800;
+
+  letter-spacing:-2px;
+
+  background:linear-gradient(
+  90deg,
+  #ffffff,
+  #c4b5fd,
+  #60a5fa
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+}
+
+.subtitle{
+
+  max-width:700px;
+
+  margin:25px auto;
+
+  color:#cbd5e1;
+
+  line-height:1.8;
+
+  font-size:18px;
+
+}
+
+.button{
+
+  margin-top:10px;
+
+  padding:16px 40px;
+
+  border:none;
+
+  border-radius:16px;
+
+  font-size:17px;
+
+  font-weight:700;
+
+  color:white;
+
+  cursor:pointer;
+
+  background:linear-gradient(
+  135deg,
+  #6366f1,
+  #8b5cf6
+  );
+
+  transition:.35s;
+
+  box-shadow:
+  0 15px 35px rgba(99,102,241,.4);
+
+}
+
+.button:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:
+  0 20px 50px rgba(99,102,241,.55);
+
+}
+/* ===========================
+   Dashboard
+=========================== */
+
+.dashboard{
+  width:100%;
+  max-width:1350px;
+
+  margin:50px auto 0;
+
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:30px;
+
+  align-items:start;
+}
+
+/* ===========================
+   Camera Card
+=========================== */
+
+.camera-card{
+
+  background:rgba(255,255,255,.08);
+
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  border-radius:28px;
+
+  padding:22px;
+
+  box-shadow:
+  0 15px 50px rgba(0,0,0,.35);
+
+  transition:.35s;
+
+}
+
+.camera-card:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:
+  0 25px 70px rgba(99,102,241,.25);
+
+}
+
+.camera-header{
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  margin-bottom:18px;
+
+  color:#fff;
+
+  font-weight:600;
+
+}
+
+.live-dot{
+
+  width:12px;
+  height:12px;
+
+  border-radius:50%;
+
+  background:#22c55e;
+
+  box-shadow:
+  0 0 15px #22c55e;
+
+  animation:pulse 1.5s infinite;
+
+}
+
+@keyframes pulse{
+
+  0%{
+    transform:scale(1);
+    opacity:1;
   }
 
-  .emoji {
-    font-size: 4rem;
+  50%{
+    transform:scale(1.4);
+    opacity:.6;
   }
 
-  .camera-card {
-    width: 100%;
-    padding: 16px;
+  100%{
+    transform:scale(1);
+    opacity:1;
   }
 
-  .camera {
-    max-width: 100%;
+}
+
+.camera-wrapper{
+
+  position:relative;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  background:#000;
+
+}
+
+.camera{
+
+  width:100%;
+  max-width:760px;
+
+  border-radius:22px;
+
+  border:3px solid rgba(255,255,255,.12);
+
+}
+
+.camera video{
+
+  border-radius:22px;
+
+}
+
+/* ===========================
+   Floating Emoji
+=========================== */
+
+.floating-emoji{
+
+  position:absolute;
+
+  top:20px;
+  right:20px;
+
+  width:90px;
+  height:90px;
+
+  border-radius:50%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:3rem;
+
+  background:rgba(255,255,255,.12);
+
+  backdrop-filter:blur(20px);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  box-shadow:
+  0 0 30px rgba(99,102,241,.45);
+
+  animation:
+  float 3s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
   }
 
-  .floating-emoji {
-    font-size: 42px;
-    top: 10px;
-    right: 10px;
+  50%{
+    transform:translateY(-10px);
   }
 
-  .button {
-    width: 100%;
+  100%{
+    transform:translateY(0px);
   }
+
+}
+
+/* ===========================
+   Right Panel
+=========================== */
+
+.info-panel{
+
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+
+}
+
+.glass-card{
+
+  background:rgba(255,255,255,.08);
+
+  backdrop-filter:blur(20px);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  border-radius:22px;
+
+  padding:25px;
+
+  transition:.35s;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.25);
+
+}
+
+.glass-card:hover{
+
+  transform:translateY(-5px);
+
+  box-shadow:
+  0 15px 40px rgba(99,102,241,.3);
+
+}
+
+.glass-card h3{
+
+  font-size:20px;
+
+  margin-bottom:20px;
+
+  color:white;
+
+}
+
+.big-emoji{
+
+  font-size:75px;
+
+  text-align:center;
+
+}
+
+.green{
+
+  color:#4ade80;
+
+  font-weight:700;
+
+  font-size:18px;
+
+}
+
+/* ===========================
+   Gesture Grid
+=========================== */
+
+.gesture-grid{
+
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:14px;
+
+}
+
+.gesture-grid span{
+
+  height:62px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  border-radius:16px;
+
+  font-size:28px;
+
+  background:rgba(255,255,255,.08);
+
+  border:1px solid rgba(255,255,255,.1);
+
+  transition:.3s;
+
+}
+
+.gesture-grid span:hover{
+
+  transform:scale(1.12);
+
+  background:#6366f1;
+
+  cursor:pointer;
+
+}
+
+/* ===========================
+   Status
+=========================== */
+
+.status{
+
+  margin-top:18px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  gap:10px;
+
+  color:#a5f3fc;
+
+  font-weight:600;
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:1000px){
+
+.dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.title{
+
+font-size:2.5rem;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+}
+
+.button{
+
+width:100%;
+
+}
+
+.camera-card{
+
+padding:15px;
+
+}
+
+.floating-emoji{
+
+width:70px;
+height:70px;
+
+font-size:2.2rem;
+
+}
+
+.gesture-grid{
+
+grid-template-columns:repeat(4,1fr);
+
+}
+
+}
+
+@media(max-width:500px){
+
+.gesture-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.big-emoji{
+
+font-size:60px;
+
+}
+
+}
+.loader{
+  width:16px;
+  height:16px;
+
+  border:3px solid rgba(255,255,255,.25);
+  border-top:3px solid #60a5fa;
+  border-radius:50%;
+
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
 }
